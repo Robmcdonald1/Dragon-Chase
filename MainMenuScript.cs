@@ -10,6 +10,8 @@ public class MainMenuScript : MonoBehaviour
     public GameObject Credits;
     public GameObject SettingsMenu;
 
+    public GameObject ChooseLevel;
+
     public Slider SoundSlider;
     public Slider MusicSlider;
 
@@ -37,6 +39,12 @@ public class MainMenuScript : MonoBehaviour
             Credits.SetActive(false);
             SettingsMenu.SetActive(false);
         }
+    }
+
+    public void ChoosedADragon(int dragon)
+    {
+        PlayerPrefs.SetInt("CurrentDragon", dragon);
+        ChooseLevel.SetActive(true);
     }
 
     public void SoundSliderValueIsChanged(){
